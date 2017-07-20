@@ -1,0 +1,39 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.8.3
+    working_directory: /go/src/github.com/circleci/ccidemo
+    steps:
+      - checkout
+      - run:
+          name: "Install Dependencies"
+          command: |
+            gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+            \curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer | bash -s stable --ruby=2.4.1 --gems=asciidoctor
+            sudo apt-get update
+            sudo apt-get install python-pip
+            sudo pip install docutils
+            go get github.com/jstemmer/go-junit-report
+            make vendor
+      - run:
+          name: "Unit Test Hugo"
+          command: |
+            mkdir /tmp/test-results
+            make test
+      - store_test_results:
+          path: /tmp/test-results
+      - run:
+          name: "Build Hugo"
+          command: make hugo-race check
+      - run:
+          name: "Checking"
+          command: |
+            git submodule update --init
+      - run:
+          name: "Test the Hugo binary on Hugo Docs Website"
+          command: ./hugo -s docs/
+      - run:
+          name: "Test the Hugo binary on Hugo Docs Website (RAM only build)"
+          command: ./hugo --renderToMemory -s docs/
