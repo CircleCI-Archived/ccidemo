@@ -81,3 +81,6 @@ workflows:
     jobs:
       - main_build
       - coverage_build
+      - try_hugo:
+          requires:
+            - main_build
