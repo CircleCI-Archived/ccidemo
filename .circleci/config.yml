@@ -1,0 +1,108 @@
+version: 2
+jobs:
+  main_build:
+    docker:
+      # circleci/ccidemo is a custom Docker image with Go, Ruby, and testing tools
+      - image: circleci/ccidemo:latest
+    working_directory: /go/src/github.com/circleci/ccidemo
+    steps:
+      - checkout
+      - run:
+          name: "Install Vendor'd Dependencies"
+          command: make vendor
+      - run:
+          name: "Build & Unit Test Hugo"
+          command: |
+            mkdir /tmp/test-results
+            make hugo-race check
+      - store_artifacts:
+          path: /tmp/test-results
+      - store_test_results:
+          path: /tmp/test-results
+      # Persist the compiled Hugo binary and the included Hugo Docs Website
+      - persist_to_workspace:
+          root: /go/src/github.com/circleci/ccidemo
+          paths:
+            - hugo
+            - docs
+
+  coverage_build:
+    docker:
+      - image: circleci/ccidemo:latest
+    working_directory: /go/src/github.com/circleci/ccidemo
+    steps:
+      - checkout
+      - run:
+          # This step can be replaced with a custom Docker image
+          name: "Install Vendor'd Dependencies"
+          command: make vendor
+      - run:
+          name: "Run Hugo Coverage Tests"
+          command: |
+            mkdir /tmp/test-results
+            make test-cover-html
+      - store_artifacts:
+          path: /tmp/test-results
+
+  try_hugo:
+    docker:
+      - image: circleci/ccidemo:latest
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: ./hugo version
+      - run:
+          name: "Test the Hugo binary on Hugo Docs Website"
+          command: ./hugo -s docs/
+      - run:
+          name: "Test the Hugo binary on Hugo Docs Website (RAM only build)"
+          command: ./hugo --renderToMemory -s docs/
+      - run:
+          name: "Test the generated docs site with HTML Proofer"
+          command: htmlproofer docs/public --url-swap "ccidemo-site/:" --allow-hash-href --empty-alt-ignore --disable-external
+      - persist_to_workspace:
+          root: /root/project/
+          paths:
+            - docs
+
+  deploy:
+    docker:
+      - image: circleci/ccidemo:latest
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: "Checkout Current Site"
+          command: |
+            # assign fingerprint for GitHub's SSH key so that `git clone` will work
+            mkdir ~/.ssh
+            echo 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==' >> ~/.ssh/known_hosts
+            git config --global user.email "demo@circleci.com"
+            git config --global user.name "CircleCI Demo User"
+            git clone git@github.com:circleci/ccidemo-site.git
+      - run:
+          name: "Update & Push Site"
+          command: |
+            cp -r docs/public/* ccidemo-site/
+            cd ccidemo-site
+            git add .
+            git commit -m "Updated website via CircleCI"
+            git push -u origin master
+      # website at https://circleci.github.io/ccidemo-site/
+
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - main_build
+      - coverage_build
+      - try_hugo:
+          requires:
+            - main_build
+      - deploy:
+          requires:
+            - try_hugo
+          filters:
+            branches:
+              only: master
