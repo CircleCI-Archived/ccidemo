@@ -50,7 +50,7 @@ test: ## Run tests
 	govendor test +local -v | go-junit-report > /tmp/test-results/junit.xml
 
 test-race: ## Run tests with race detector
-	govendor test -race +local
+	govendor test -race +local -v | go-junit-report > /tmp/test-results/junit.xml
 
 fmt: ## Run gofmt linter
 	@for d in `govendor list -no-status +local | sed 's/github.com.gohugoio.hugo/./'` ; do \

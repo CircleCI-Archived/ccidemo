@@ -21,12 +21,11 @@ jobs:
           name: "Unit Test Hugo"
           command: |
             mkdir /tmp/test-results
-            make test
-      - store_test_results:
-          path: /tmp/test-results
       - run:
           name: "Build Hugo"
           command: make hugo-race check
+      - store_test_results:
+          path: /tmp/test-results
       - run:
           name: "Checking"
           command: |
