@@ -50,7 +50,7 @@ test: ## Run tests
 	govendor test +local -v | go-junit-report > /tmp/test-results/junit.xml
 
 test-race: ## Run tests with race detector
-	govendor test -race +local -v -coverprofile /tmp/test-results/coverage.out | go-junit-report > /tmp/test-results/junit.xml
+	govendor test -race +local -v | go-junit-report > /tmp/test-results/junit.xml
 
 fmt: ## Run gofmt linter
 	@for d in `govendor list -no-status +local | sed 's/github.com.gohugoio.hugo/./'` ; do \
@@ -71,12 +71,12 @@ vet: ## Run go vet linter
 		echo "^ go vet errors!" && echo && exit 1; \
 	fi
 
-test-cover-html: PACKAGES = $(shell govendor list -no-status +local | sed 's/github.com.gohugoio.hugo/./')
+test-cover-html: PACKAGES = $(shell govendor list -no-status +local | sed 's/github.com.circleci.ccidemo/./')
 test-cover-html: ## Generate test coverage report
-	echo "mode: count" > coverage-all.out
+	echo "mode: count" > /tmp/test-results/coverage-all.out
 	$(foreach pkg,$(PACKAGES),\
-		govendor test -coverprofile=coverage.out -covermode=count $(pkg);\
-		tail -n +2 coverage.out >> coverage-all.out;)
+		govendor test -coverprofile=/tmp/test-results/coverage.out -covermode=count $(pkg);\
+		tail -n +2 /tmp/test-results/coverage.out >> /tmp/test-results/coverage-all.out;)
 	${GOEXE} tool cover -html=coverage-all.out
 
 check-vendor: ## Verify that vendored packages match git HEAD

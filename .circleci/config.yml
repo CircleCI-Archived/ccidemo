@@ -24,6 +24,9 @@ jobs:
       - run:
           name: "Build Hugo"
           command: make hugo-race check
+      - run:
+          name: "Build Hugo"
+          command: make test-cover-html
       - store_artifacts:
           path: /tmp/test-results
       - store_test_results:
