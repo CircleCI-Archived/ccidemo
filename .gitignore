@@ -15,4 +15,3 @@ vendor/*/
 coverage*.out
 
 GoBuilds
-dist
