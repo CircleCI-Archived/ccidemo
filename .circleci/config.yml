@@ -2,7 +2,7 @@ version: 2
 jobs:
   main_build:
     docker:
-      - image: circleci/golang:1.8.3
+      - image: circleci/ccidemo:latest
     working_directory: /go/src/github.com/circleci/ccidemo
     steps:
       - checkout
@@ -10,11 +10,6 @@ jobs:
           # This step can be replaced with a custom Docker image
           name: "Install Dependencies"
           command: |
-            gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-            \curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer | bash -s stable --ruby=2.4.1 --gems=asciidoctor
-            sudo apt-get update
-            sudo apt-get install python-pip
-            sudo pip install docutils
             go get github.com/jstemmer/go-junit-report
             make vendor
       - run:
@@ -40,7 +35,7 @@ jobs:
           command: ./hugo --renderToMemory -s docs/
   coverage_build:
     docker:
-      - image: circleci/golang:1.8.3
+      - image: circleci/ccidemo:latest
     working_directory: /go/src/github.com/circleci/ccidemo
     steps:
       - checkout
@@ -48,11 +43,6 @@ jobs:
           # This step can be replaced with a custom Docker image
           name: "Install Dependencies"
           command: |
-            gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-            \curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/stable/binscripts/rvm-installer | bash -s stable --ruby=2.4.1 --gems=asciidoctor
-            sudo apt-get update
-            sudo apt-get install python-pip
-            sudo pip install docutils
             go get github.com/jstemmer/go-junit-report
             make vendor
       - run:
@@ -68,7 +58,7 @@ jobs:
           path: /tmp/test-results
   try_hugo:
     docker:
-      - image: circleci/golang:1.8.3
+      - image: circleci/ccidemo:latest
     steps:
       - attach_workspace:
           at: ~/project
