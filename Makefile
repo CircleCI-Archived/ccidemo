@@ -77,7 +77,7 @@ test-cover-html: ## Generate test coverage report
 	$(foreach pkg,$(PACKAGES),\
 		govendor test -coverprofile=/tmp/test-results/coverage.out -covermode=count $(pkg);\
 		tail -n +2 /tmp/test-results/coverage.out >> /tmp/test-results/coverage-all.out;)
-	${GOEXE} tool cover -html=coverage-all.out
+	${GOEXE} tool cover -html=/tpm/test-results/coverage-all.out
 
 check-vendor: ## Verify that vendored packages match git HEAD
 	@git diff-index --quiet HEAD vendor/ || (echo "check-vendor target failed: vendored packages out of sync" && echo && git diff vendor/ && exit 1)
