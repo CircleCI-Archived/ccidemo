@@ -10,12 +10,6 @@ A Fast and Flexible Static Site Generator built with love by [spf13](http://spf1
 [Contribution Guide](CONTRIBUTING.md) |
 [Twitter](http://twitter.com/gohugoio)
 
-[![GoDoc](https://godoc.org/github.com/circleci/ccidemo?status.svg)](https://godoc.org/github.com/circleci/ccidemo)
-[![Linux and macOS Build Status](https://api.travis-ci.org/gohugoio/hugo.svg?branch=master&label=Linux+and+macOS+build "Linux and macOS Build Status")](https://travis-ci.org/gohugoio/hugo)
-[![Windows Build Status](https://ci.appveyor.com/api/projects/status/a5mr220vsd091kua?svg=true&label=Windows+build "Windows Build Status")](https://ci.appveyor.com/project/bep/hugo/branch/master)
-[![Dev chat at https://gitter.im/gohugoio/hugo](https://img.shields.io/badge/gitter-developer_chat-46bc99.svg)](https://gitter.im/spf13/hugo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Go Report Card](https://goreportcard.com/badge/github.com/circleci/ccidemo)](https://goreportcard.com/report/github.com/circleci/ccidemo)
-
 ## Overview
 
 Hugo is a static HTML and CSS website generator written in [Go][].

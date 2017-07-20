@@ -74,6 +74,7 @@ jobs:
           at: ~/project
       - run: ls -lah
       - run: ./hugo version
+      - test hugo with HTML Proofer
 
 workflows:
   version: 2
