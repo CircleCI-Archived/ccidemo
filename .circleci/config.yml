@@ -28,6 +28,10 @@ jobs:
           path: /tmp/test-results
       - store_test_results:
           path: /tmp/test-results
+      - persist_to_workspace:
+          root: /go/src/github.com/circleci/ccidemo
+          paths:
+            - hugo
       - run:
           name: "Test the Hugo binary on Hugo Docs Website"
           command: ./hugo -s docs/
