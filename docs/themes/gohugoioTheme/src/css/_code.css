@@ -5,19 +5,13 @@ pre, .pre  {
 }
 
 code {
-    padding: 0;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
+    padding: 0.2em;
     margin: 0;
     font-size: 85%;
     background-color: rgba(27,31,35,0.05);
     border-radius: 3px;
 }
 
- code::before, code::after {
-    letter-spacing: -0.2em;
-    content: "\00a0";
-}
 
 pre  code {
   display: block;
@@ -27,8 +21,9 @@ pre  code {
   overflow-x: auto;
 }
 
+
 pre {
-  background-color: #f8f8f8;
+  background-color: #fff;
   color: #333;
   white-space: pre;
   hyphens: none;
@@ -37,6 +32,16 @@ pre {
   border-color: #ccc;
   border-style: solid;
 }
+
+/* The Pygments highlighter comes with its own styles. */
+.highlight pre {
+  background-color: inherit;
+  color: inherit;
+  padding: 0.5em;
+  font-size: .875rem;
+}
+
+
 /*We are adding the copy button content here so we can change it with javascript. See the "Clipboard scripts"*/
 .copy:after {
   content: "Copy"
