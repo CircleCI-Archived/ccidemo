@@ -27,4 +27,4 @@ So for a site  `baseURL` set to `http://yoursite.com/hugo/` and the current lang
 {{ "blog/" | relLangURL }} → "/hugo/en/blog/"
 ```
 
-[multiliconfig]: /content-management/multilingual/#configuring-multilingual-mode
+[multiliconfig]: /content-management/multilingual/

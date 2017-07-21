@@ -24,5 +24,5 @@ See [Installing Hugo][installpygments] for more information on Pygments or [Synt
 
 
 [highlight]: /content-management/shortcodes/#highlight
-[installpygments]: /getting-started/installing/#installing-pygments-optional
+[installpygments]: /getting-started/installing/
 [syntax]: /tools/syntax-highlighting/

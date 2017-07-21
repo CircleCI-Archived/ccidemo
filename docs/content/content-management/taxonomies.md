@@ -232,7 +232,7 @@ Currently taxonomies only support the [default `weight => date` ordering of list
 [content type]: /content-management/types/
 [documentation on archetypes]: /content-management/archetypes/
 [front matter]: /content-management/front-matter/
-[taxonomy list templates]: /templates/taxonomy-templates/#taxonomy-page-templates
+[taxonomy list templates]: /templates/taxonomy-templates/
 [taxonomy templates]: /templates/taxonomy-templates/
-[terms within the taxonomy]: /templates/taxonomy-templates/#taxonomy-terms-templates "See how to order terms associated with a taxonomy"
+[terms within the taxonomy]: /templates/taxonomy-templates/ "See how to order terms associated with a taxonomy"
 [config]: /getting-started/configuration/
