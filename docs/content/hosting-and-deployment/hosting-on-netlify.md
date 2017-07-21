@@ -114,7 +114,6 @@ You now have a live website served over https, distributed through CDN, and conf
 [gitsm]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [httpscustom]: https://www.netlify.com/docs/ssl/
 [hugoversions]: https://github.com/netlify/build-image/blob/master/Dockerfile#L166
-[installthemes]: /themes/installing/
 [netlify]: https://www.netlify.com/
 [netlifysignup]: https://app.netlify.com/signup
 [Quick Start]: /getting-started/quick-start/

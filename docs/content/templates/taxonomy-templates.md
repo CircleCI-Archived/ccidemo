@@ -145,7 +145,6 @@ Taxonomies can be ordered by either alphabetical key or by the number of content
 </ul>
 ```
 
-<!-- [See Also Taxonomy Lists](/templates/list/) -->
 
 ## Order Content within Taxonomies
 
@@ -335,7 +334,5 @@ Because taxonomies are lists, the [`.GetPage` function][getpage] can be used to 
 
 [delimit]: /functions/delimit/
 [getpage]: /functions/getpage/
-[lists]: /templates/lists/
-[renderlists]: /templates/lists/
 [single page template]: /templates/single-page-templates/
 [sitevars]: /variables/site/

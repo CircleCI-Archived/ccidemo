@@ -71,7 +71,6 @@ Hugo does not currently ship with an asset pipeline ([#3207](https://github.com/
 [data templates]: /templates/data-templates/
 [homepage]: /templates/homepage/
 [`layouts`]: /templates/
-[lists]: /templates/list/
 [pagevars]: /variables/page/
 [partials]: /templates/partials/
 [searchconsole]: https://support.google.com/analytics/answer/1142414?hl=en

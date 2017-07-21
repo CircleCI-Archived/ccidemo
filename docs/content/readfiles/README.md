@@ -5,7 +5,7 @@ Files in this directory are:
 1. Used in *more than one place* within the Hugo docs
 2. Used in Examples of readdir (i.e. in local file templates)
 
-These files are called using the [`readfile` shortcode (source)](../layouts/readfile.html).
+These files are called using the `readfile` shortcode (source).
 
 You can call this shortcode in the docs as follows:
 

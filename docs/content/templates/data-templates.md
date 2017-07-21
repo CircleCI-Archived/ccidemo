@@ -116,7 +116,7 @@ Note the use of the [`markdownify` template function][markdownify]. This will se
 
 ## Data-Driven Content
 
-In addition to the [data files](/extras/datafiles/) feature, Hugo also a "data-driven content" feature, which lets you load any [JSON](http://www.json.org/) or [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) file from nearly any resource.
+In addition to the data files feature, Hugo also a "data-driven content" feature, which lets you load any [JSON](http://www.json.org/) or [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) file from nearly any resource.
 
 Data-driven content currently consists of two functions, `getJSON` and `getCSV`, which are available in all template files.
 
@@ -217,7 +217,7 @@ Currently, you can only use those authentication methods that can be put into an
 
 To load local files with `getJSON` and `getCSV`, the source files must reside within Hugo's working directory. The file extension does not matter, but the content does.
 
-It applies the same output logic as above in [Calling the Functions with a URL](#calling-the-functions-with-a-url).
+It applies the same output logic as above in Calling the Functions with a URL.
 
 ## LiveReload with Data Files
 
@@ -242,7 +242,6 @@ If you change any local file and the LiveReload is triggered, Hugo will read the
 [config]: /getting-started/configuration/
 [csv]: https://tools.ietf.org/html/rfc4180
 [customize]: /themes/customizing/
-[json]: /documents/ecma-404-json-spec.pdf
 [LiveReload]: /getting-started/usage/#livereload
 [lookup]: /templates/lookup-order/
 [markdownify]: /functions/markdownify/

@@ -483,7 +483,6 @@ Go allows you to do more than what's shown here. Using Hugo's [`where` function]
 [dotdoc]: http://golang.org/pkg/text/template/#hdr-Variables
 [first]: /functions/first/
 [front matter]: /content-management/front-matter/
-[functions]: /functions/ "See the full list of Hugo's templating functions with a quick start reference guide and basic and advanced examples."
 [Go html/template]: http://golang.org/pkg/html/template/ "Godocs references for Golang's html templating"
 [gohtmltemplate]: http://golang.org/pkg/html/template/ "Godocs references for Golang's html templating"
 [index]: /functions/index/

@@ -643,8 +643,8 @@ Using `first` and `where` together can be very powerful:
 [sections]: /content-management/sections/
 [sectiontemps]: /templates/section-templates/
 [sitevars]: /variables/site/
-[taxlists]: /templates/taxonomy-templates/#taxonomy-list-templates/
-[taxterms]: /templates/taxonomy-templates/#taxonomy-terms-templates/
+[taxlists]: /templates/taxonomy-templates/
+[taxterms]: /templates/taxonomy-templates/
 [taxvars]: /variables/taxonomy/
 [views]: /templates/views/
 [wherefunction]: /functions/where/

@@ -193,5 +193,5 @@ Here is the way Hugo traverses the single-page lookup order for `my-first-event.
 [single page templates]: /templates/single-page-templates/
 [singlelookup]: /templates/single-page-templates/#single-page-template-lookup-order
 [switch]: https://en.wikipedia.org/wiki/Switch_statement#Fallthrough
-[taxonomylookup]: /templates/taxonomy-templates/#taxonomy-list-template-lookup-order
-[termslookup]: /templates/taxonomy-templates/#taxonomy-terms-template-lookup-order
+[taxonomylookup]: /templates/taxonomy-templates/
+[termslookup]: /templates/taxonomy-templates/

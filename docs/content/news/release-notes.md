@@ -823,7 +823,6 @@ maintainers and their tremendous contributions this release.
     * A new [Troubleshooting](/troubleshooting/) section is added
     * It's now searchable through Google Custom Search ({{< gh 753 >}})
     * Some new great tutorials:
-        * [Creating a new theme](/tutorials/creating-a-new-theme/)
 * [`hugo new`](/content-management/archetypes/) now copies the content in addition to the front matter
 * Improved unit test coverage
 * Fixed a lot of Windows-related path issues
@@ -851,7 +850,6 @@ This release represents over 90 code commits from 28 different contributors.
   * Inner [shortcode](/content-management/shortcodes/) content now treated as Markdown
   * Support for header ids in Markdown (# Header {#myid})
   * [Where](/templates/lists/) template function to filter lists of content, taxonomies, etc.
-  * [GroupBy](/templates/lists/) & [GroupByDate](/templates/list/) methods to group pages
   * Taxonomy [pages list](/templates/taxonomy-templates/) now sortable, filterable, limitable & groupable
   * General cleanup to taxonomies & documentation to make it more clear and consistent
   * Pretty links now always have trailing slashes
