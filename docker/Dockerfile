@@ -27,6 +27,8 @@ RUN wget -O go.tar.gz https://storage.googleapis.com/golang/go1.8.3.linux-amd64.
 		tar -C /usr/local -xzf go.tar.gz && \
 		rm go.tar.gz
 
+RUN go get github.com/jstemmer/go-junit-report
+
 CMD ["htmlproofer","--help"]
 
 EXPOSE 1313

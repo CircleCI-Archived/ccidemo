@@ -10,7 +10,6 @@ jobs:
           # This step can be replaced with a custom Docker image
           name: "Install Dependencies"
           command: |
-            go get github.com/jstemmer/go-junit-report
             make vendor
       - run:
           name: "Unit Test Hugo"
