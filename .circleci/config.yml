@@ -27,6 +27,7 @@ jobs:
           root: /go/src/github.com/circleci/ccidemo
           paths:
             - hugo
+            - docs
 
   coverage_build:
     docker:
