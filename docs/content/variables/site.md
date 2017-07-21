@@ -95,7 +95,7 @@ The following is a list of site-level (aka "global") variables. Many of these va
 : top-level directories of the site.
 
 `.Site.Taxonomies`
-: the [taxonomies](/taxonomies/usage/) for the entire site.  Replaces the now-obsolete `.Site.Indexes` since v0.11. Also see section [Taxonomies elsewhere](#taxonomies-elsewhere).
+: the taxonomies for the entire site.  Replaces the now-obsolete `.Site.Indexes` since v0.11. Also see section Taxonomies elsewhere.
 
 `.Site.Title`
 : a string representing the title of the site.

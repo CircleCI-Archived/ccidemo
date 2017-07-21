@@ -823,8 +823,6 @@ maintainers and their tremendous contributions this release.
     * A new [Troubleshooting](/troubleshooting/) section is added
     * It's now searchable through Google Custom Search ({{< gh 753 >}})
     * Some new great tutorials:
-        * [Automated deployments with
-          Wercker](/tutorials/automated-deployments/)
         * [Creating a new theme](/tutorials/creating-a-new-theme/)
 * [`hugo new`](/content-management/archetypes/) now copies the content in addition to the front matter
 * Improved unit test coverage
@@ -856,7 +854,6 @@ This release represents over 90 code commits from 28 different contributors.
   * [GroupBy](/templates/lists/) & [GroupByDate](/templates/list/) methods to group pages
   * Taxonomy [pages list](/templates/taxonomy-templates/) now sortable, filterable, limitable & groupable
   * General cleanup to taxonomies & documentation to make it more clear and consistent
-  * [Showcase](/showcase/) returned and has been expanded
   * Pretty links now always have trailing slashes
   * [BaseUrl](/getting-started/configuration/) can now include a subdirectory
   * Better feedback about draft & future post rendering
@@ -892,7 +889,6 @@ This release represents over 110 code commits from 29 different contributors.
 This release represents over 110 code commits from 29 different contributors.
 
   * [Syntax highlighting](/tools/syntax-highlighting/) powered by pygments (**slow**)
-  * Ability to [sort content](/templates/lists/) many more ways
   * Automatic [table of contents](/content-management/toc/) generation
   * Support for Unicode URLs, aliases and indexes
   * Configurable per-section [permalink](/content-management/urls/) pattern support
@@ -903,7 +899,6 @@ This release represents over 110 code commits from 29 different contributors.
   * Watching very large sites now works on Mac
   * RSS generation improved. Limited to 50 items by default, can limit further in [template](/templates/rss/)
   * Boolean params now supported in [fm](/content-management/front-matter/)
-  * Launched website [showcase](/showcase/). Show off your own hugo site!
   * A bunch of [bug fixes](https://github.com/circleci/ccidemo/commits/master)
 
 ----
