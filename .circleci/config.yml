@@ -55,7 +55,7 @@ jobs:
 
   try_hugo:
     docker:
-      - image: circleci/ccidemo:latest
+      - image: circleci/ccidemo:3
     steps:
       - attach_workspace:
           at: ~/project
