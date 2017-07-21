@@ -9,7 +9,6 @@ WORKDIR $GOPATH
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		git \
-		golang \
 		libxml2-dev \
 		libxslt-dev \
 		openssh-client \
@@ -23,6 +22,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		--no-document && \
 	pip install --upgrade pip && \
 	pip install docutils && \
+
+RUN wget -O go.tar.gz https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz \
+		tar -C /usr/local -xzf go.tar.gz \
+		rm go.tar.gz
 
 CMD ["htmlproofer","--help"]
 
