@@ -27,12 +27,7 @@ jobs:
           root: /go/src/github.com/circleci/ccidemo
           paths:
             - hugo
-      - run:
-          name: "Test the Hugo binary on Hugo Docs Website"
-          command: ./hugo -s docs/
-      - run:
-          name: "Test the Hugo binary on Hugo Docs Website (RAM only build)"
-          command: ./hugo --renderToMemory -s docs/
+
   coverage_build:
     docker:
       - image: circleci/ccidemo:latest
@@ -56,15 +51,24 @@ jobs:
           path: /tmp/test-results
       - store_test_results:
           path: /tmp/test-results
+
   try_hugo:
     docker:
       - image: circleci/ccidemo:latest
     steps:
       - attach_workspace:
           at: ~/project
-      - run: ls -lah
       - run: ./hugo version
-      - test hugo with HTML Proofer
+      - run:
+          name: "Test the Hugo binary on Hugo Docs Website"
+          command: ./hugo -s docs/
+      - run:
+          name: "Test the Hugo binary on Hugo Docs Website (RAM only build)"
+          command: ./hugo --renderToMemory -s docs/
+      - run:
+          name: "Test the generated docs site with HTML Proofer"
+          command: htmlproofer docs/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+
 
 workflows:
   version: 2
