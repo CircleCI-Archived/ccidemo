@@ -1,5 +1,6 @@
 FROM ruby:2.4.1
 
+ENV LANG C.UTF-8
 ENV GOLANG_VERSION 1.8.3
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
