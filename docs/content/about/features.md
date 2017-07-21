@@ -63,7 +63,6 @@ See what's coming next in the [Hugo roadmap][].
 [content summaries]: /content-management/summaries/
 [content types]: /content-management/types/
 [Disqus]: https://disqus.com/
-[Dynamic menu]: /templates/menus/
 [Extremely fast]: https://github.com/bep/hugo-benchmark
 [front matter]: /content-management/front-matter/
 [functions]: /functions/

@@ -183,8 +183,7 @@ It's possible to set some options for Markdown rendering in a content's front ma
 [config]: /getting-started/configuration/ "Hugo documentation for site configuration"
 [content type]: /content-management/types/
 [contentorg]: /content-management/organization/
-[definetype]: /content-management/types/#defining-a-content-type "Learn how to specify a type and a layout in a content's front matter"
-[json]: /documents/ecma-404-json-spec.pdf "Specification for JSON, JavaScript Object Notation"
+[definetype]: /content-management/types/ "Learn how to specify a type and a layout in a content's front matter"
 [lists]: /templates/lists/#ordering-content "See how to order content in list pages; for example, templates that look to specific _index.md for content and front matter."
 [lookup]: /templates/lookup-order/ "Hugo traverses your templates in a specific order when rendering content to allow for DRYer templating."
 [ordering]: /templates/lists/ "Hugo provides multiple ways to sort and order your content in list templates"

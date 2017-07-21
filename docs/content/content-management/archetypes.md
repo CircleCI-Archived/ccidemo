@@ -204,5 +204,4 @@ The preceding archetype is kept up to date with every Hugo build by using Hugo's
 [front matter]: /content-management/front-matter/
 [RFC 3339 format]: https://www.ietf.org/rfc/rfc3339.txt
 [taxonomies]: /content-management/taxonomies/
-[lookup]: /templates/lookup/
 [templates]: /templates/

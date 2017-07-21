@@ -119,7 +119,7 @@ Ensuring heading uniqueness across the site is accomplished with a unique identi
 ```
 
 
-[built-in Hugo shortcodes]: /content-management/shortcodes/#using-the-built-in-shortcodes
+[built-in Hugo shortcodes]: /content-management/shortcodes/
 [lists]: /templates/lists/
 [output formats]: /templates/output-formats/
 [shortcode]: /content-management/shortcodes/
