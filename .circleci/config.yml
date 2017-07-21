@@ -16,6 +16,7 @@ jobs:
           name: "Unit Test Hugo"
           command: |
             mkdir /tmp/test-results
+      - run: go version
       - run:
           name: "Build Hugo"
           command: make hugo-race check
