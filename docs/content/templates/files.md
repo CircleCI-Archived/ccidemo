@@ -45,12 +45,10 @@ This shortcode creates a link to each of the files in a directory---display as t
 You can then call the shortcode as follows inside of your content's markup:
 
 ```html
-{{</* directoryindex path="/static/css" pathURL="/css" */>}}
 ```
 
 The above shortcode [is part of the code for the Hugo docs][dirindex]. Here it lists this site's CSS files:
 
-{{< directoryindex path="/themes/gohugoioTheme/static/dist" pathURL="/css" >}}
 
 {{% note "Slashes are Important" %}}
 The initial slash `/` in `pathURL` is important in the `directoryindex` shortcode. Otherwise, `pathURL` becomes relative to the current web page.
@@ -63,7 +61,6 @@ The [`readfile` function][reads] reads a file from disk and converts it into a s
 To use the `readFile` function in your templates, make sure the path is relative to your *Hugo project's root directory*:
 
 ```html
-{{ readFile "/content/templates/local-file-templates" }}
 ```
 
 ### `readFile` Example: Add a Project File to Content
@@ -80,11 +77,6 @@ If you are going to create [custom shortcodes](/templates/shortcode-templates/) 
 
 Here is the templating for our new `readfile` shortcode:
 
-{{% code file="layouts/shortcodes/readfile.html" download="readfile.html" %}}
-```
-{{< readfile file="/themes/gohugoioTheme/layouts/shortcodes/readfile.html">}}
-```
-{{% /code %}}
 
 This `readfile` shortcode is [also part of the Hugo docs][readfilesource]. So is [`testing.txt`][testfile], which we will call in this example by passing it into our new `readfile` shortcode as follows:
 
@@ -95,7 +87,6 @@ This `readfile` shortcode is [also part of the Hugo docs][readfilesource]. So is
 The output "string" for this shortcode declaration will be the following:
 
 ```markdown
-{{< readfile file="/content/readfiles/testing.txt" >}}
 ```
 
 However, if we want Hugo to pass this string through Blackfriday, we should add the `markdown="true"` optional parameter:

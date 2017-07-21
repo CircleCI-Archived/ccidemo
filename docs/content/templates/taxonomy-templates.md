@@ -185,16 +185,16 @@ There are two different templates that the use of taxonomies will require you to
 
 Both templates are covered in detail in the templates section.
 
-A [list template](/templates/list/) is any template that will be used to render multiple pieces of content in a single html page. This template will be used to generate all the automatically created taxonomy pages.
+A list template is any template that will be used to render multiple pieces of content in a single html page. This template will be used to generate all the automatically created taxonomy pages.
 
-A [taxonomy terms template](/templates/terms/) is a template used to
+A taxonomy terms template is a template used to
 generate the list of terms for a given template.
 
 <!-- Begin /taxonomies/displaying/ -->
 
 There are four common ways you can display the data in your
 taxonomies in addition to the automatic taxonomy pages created by hugo
-using the [list templates](/templates/list/):
+using the list templates:
 
 1. For a given piece of content, you can list the terms attached
 2. For a given piece of content, you can list other content with the same

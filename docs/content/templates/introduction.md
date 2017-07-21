@@ -485,7 +485,6 @@ Go allows you to do more than what's shown here. Using Hugo's [`where` function]
 [front matter]: /content-management/front-matter/
 [Go html/template]: http://golang.org/pkg/html/template/ "Godocs references for Golang's html templating"
 [gohtmltemplate]: http://golang.org/pkg/html/template/ "Godocs references for Golang's html templating"
-[index]: /functions/index/
 [math functions]: /functions/math/
 [partials]: /templates/partials/ "Link to the partial templates page inside of the templating section of the Hugo docs"
 [relpermalink]: /variables/page/
