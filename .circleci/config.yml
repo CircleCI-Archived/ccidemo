@@ -70,6 +70,14 @@ jobs:
           name: "Test the generated docs site with HTML Proofer"
           command: htmlproofer docs/public --allow-hash-href --empty-alt-ignore --disable-external
 
+  deploy:
+    docker:
+      - image: circleci/ccidemo:3
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: ls -lah ~/project/docs/public
+
 
 workflows:
   version: 2
@@ -80,3 +88,6 @@ workflows:
       - try_hugo:
           requires:
             - main_build
+      - deploy:
+          requires:
+            - try_hugo
