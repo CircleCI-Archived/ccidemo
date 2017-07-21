@@ -68,7 +68,7 @@ jobs:
           command: ./hugo --renderToMemory -s docs/
       - run:
           name: "Test the generated docs site with HTML Proofer"
-          command: htmlproofer docs/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+          command: htmlproofer docs/public --allow-hash-href --empty-alt-ignore --disable-external
 
 
 workflows:
