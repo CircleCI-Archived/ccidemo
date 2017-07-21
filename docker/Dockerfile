@@ -1,26 +1,19 @@
-FROM ruby:2.4.1-alpine
+FROM ruby:2.4.1
 
-LABEL maintainer="ricardo@feliciano.tech"
-
+ENV GOLANG_VERSION 1.8.3
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
-RUN apk add --update --no-cache --virtual build-dependencies
-
-RUN apk add --update --no-cache \
-		bash \
-		build-base \
-		ca-certificates \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 		git \
-		go \
-		libcurl \
+		golang \
 		libxml2-dev \
 		libxslt-dev \
-		openssh \
-		py-pip \
+		openssh-client \
+		python-pip \
 		rsync \
 		wget && \
 	gem install \
@@ -30,8 +23,6 @@ RUN apk add --update --no-cache \
 		--no-document && \
 	pip install --upgrade pip && \
 	pip install docutils && \
-	apk del build-dependencies && \
-	rm /var/cache/apk/*
 
 CMD ["htmlproofer","--help"]
 
