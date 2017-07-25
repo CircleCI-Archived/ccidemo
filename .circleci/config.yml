@@ -103,6 +103,7 @@ workflows:
       - deploy:
           requires:
             - try_hugo
+            - coverage_build
           filters:
             branches:
               only: master
